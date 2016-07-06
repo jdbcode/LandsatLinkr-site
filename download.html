@@ -53,6 +53,22 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+					
+					<h3>Version 0.3.3 (beta) 7/6/16</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.3-beta/LandsatLinkr_0.3.3.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
+					<p>
+						This version adds two parameters to the compositing step that control the range of dates to include in annual composites. When asked by the
+						<code>run_landsatlinkr()</code> function, you must supply a start day-of-year and end day-of-year. This allows for finer control over what dates
+						are included in composites and allows users working in the southern hemisphere to make composites that bridge the year divide in their growing 
+						season. For more information on defining these parameters please see the <a href="guide.html#doy">Define a range of dates to include in your composites</a>
+						section of the user guide.
+					</p>					
+					<hr>
+					
+										
 					<h3>Version 0.3.2 (beta) 4/21/16</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.2-beta/LandsatLinkr_0.3.2.zip", "LandsatLinkr")
