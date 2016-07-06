@@ -404,7 +404,7 @@
 							bug fixes and enhancements.  
 						</p>
 						<pre>
-download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.2-beta/LandsatLinkr_0.3.2.zip", "LandsatLinkr")
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.3-beta/LandsatLinkr_0.3.3.zip", "LandsatLinkr")
 install.packages("LandsatLinkr", repos=NULL, type="binary")
 install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
 						<p>
@@ -1211,7 +1211,31 @@ For more information see the LLR guide page: http://landsatlinkr.jdbcode.com/gui
 <pre>Define a maximum day-of-year to include in the composites: </pre>
 				
 						<p>
-							After you provide the date range, the miXel compositing and mosaicking process will start. Progress will be displayed in the
+							Place your cursor after the queries, type the integer value that represents the year-of-day (start or end) and hit enter. 
+						</p>
+				
+				
+						<p>
+							<strong>13. Choose a method to summarize the value of overlapping pixels in each annual composite.</strong> For overlapping pixels
+							in each annual composite you can summarize them by: mean, maximum, minimum, or median. There is some evidence that median produces
+							cleaner composites when multiple path rows are included in a composite - the seams are less visible, likely because of outlier weight
+							reduction. However, the median calculation takes significantly longer than mean.
+						</p>
+						<p>LLR will print the following:</p>
+<pre>Select a method to summarize the value of overlapping pixels 
+
+1: Mean
+2: Maximum
+3: Minimum
+4: Median *long processing time*
+
+Selection: </pre>
+						<p>
+							Place your cursor after <var>Selection:</var> and type the integer value the represents the method you want to use and then hit enter. 
+						</p>
+						
+						<p>
+							After you provide the compositing method, the miXel compositing and mosaicking process will start. Progress will be displayed in the
 							R console and you can also periodically check the output folder you defined in Step 9 to see which composites have been created. If there are
 							overlapping years between MSS and TM or OLI and ETM+ the miXel program will determine the offset between the overlapping annual time series of these
 							sensors' images and put the results in subfolders called <em>mss_offset</em> and <em>oli_offset</em> with the TC index that is currently
