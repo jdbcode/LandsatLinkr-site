@@ -53,6 +53,30 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+					<h3>Version 0.3.4 (beta) 7/7/16</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.4-beta/LandsatLinkr_0.3.4.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
+					<p>
+						This version hopefully fixes a bug in the mixel compositing procedure where a temporary file is inadvertently deleted before the program 
+						is finished using it. This version reloads the file from its "permanent" location instead of the temporary R raster package location. 
+						Please email me if you get an error similar to the following when running the compositing step after loading this version of the code.
+					</p>
+					
+<pre>[1] "...calculating mean pixel-level offset"
+[1] "...adjusting images by mean pixel-level offset:"
+[1] "......2013_project1_tca_composite.bsq"
+[1] "......2014_project1_tca_composite.bsq"
+Error in file(fn, "rb") : cannot open the connection
+In addition: Warning messages:
+1: In create2GDAL(dataset = dataset, drivername = drivername, type = type,  :
+  mvFlag=NA unsuitable for type Byte
+2: In file(fn, "rb") :
+  cannot open file 'C:\Users\***\AppData\Local\Temp\Rtmpymihj4\raster\r_tmp_2016-07-07_011312_7288_93312.gri': No such file or directory</pre>					
+					<hr>
+					
+					
 					
 					<h3>Version 0.3.3 (beta) 7/6/16</h3>
 					<pre>
