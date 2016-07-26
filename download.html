@@ -53,6 +53,18 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+					<h3>Version 0.3.5 (beta) 7/26/16</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.5-beta/LandsatLinkr_0.3.5.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
+					<p>
+						This release fixes a bug that occurs when compositing images across the year divide where there are no image dates from the first year in an annual 
+						set (no 2009 dates in the 2009-2010 set, for example) - it would not create a composite in this case. It also adds the ability to define how to label 
+						the annual composites when crossing the year divide - either pre- or post- divide year. Previously, it was hardwired to label with the pre-divide year.
+					</p>
+					
+					
 					<h3>Version 0.3.4 (beta) 7/7/16</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.4-beta/LandsatLinkr_0.3.4.zip", "LandsatLinkr")
