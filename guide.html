@@ -404,7 +404,7 @@
 							bug fixes and enhancements.  
 						</p>
 						<pre>
-download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.4-beta/LandsatLinkr_0.3.4.zip", "LandsatLinkr")
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.5-beta/LandsatLinkr_0.3.5.zip", "LandsatLinkr")
 install.packages("LandsatLinkr", repos=NULL, type="binary")
 install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
 						<p>
@@ -1193,11 +1193,10 @@ min y coordinate:</pre>
 						</table>
 						
 						<p>
-							Select a starting day and and ending day to bound the image dates that will be included in the composites. For example, in western Oregon, USA, forest vegetation is most
+							Select a starting day and an ending day to bound the image dates that will be included in the composites. For example, in western Oregon, USA, forest vegetation is most
 							robust and stable from about June 20 though August 31st. I would therefore use 171 and 243 as the day-of-year range limits for this composite set. Each composite will include only images
 							for those dates in a given year. If you're working across the year divide, as those in the southern hemisphere might be, you would maybe select something like November 20 through January 31, or
-							354 and 31, respectively. In the case where an annual composite crosses a year divide, LLR will label the composite image file with the first year encountered in the date range. For instance,
-							in the November 20 through January 31 example, images for these dates composited from 2009 and 2010 would be labeled as 2009 in the composite output file.
+							354 and 31, respectively.
 						</p>
 						<p>The R console will print the following statement:
 <pre>The following two parameter inputs are the minimum and maximum day-of-year to include in your composites.
@@ -1213,8 +1212,26 @@ For more information see the LLR guide page: http://landsatlinkr.jdbcode.com/gui
 						<p>
 							Place your cursor after the queries, type the integer value that represents the year-of-day (start or end) and hit enter. 
 						</p>
+						
+						<p>
+							If your date range crosses the year divide, as in the example: minimum day-of-year set as 354 and the maximum day-of-year set as 31, then you will be
+							prompted to define how to label the composite image files. They can either be labeled with the pre- or post- divide year. For example, if you want to
+							include images from December 2009 through January 2010, then the composite can either be label as 2009 (pre) or 2010 (post).
+						</p>
+						<p>In the event that your date range crosses the year divide, here is the interface query to select a file labeling protocol:
+						
+<pre>Your date range crosses the year divide, would you like to label the annual composite files with the pre- or post- divide year? 
+
+1: Pre
+2: Post						
+
+Selection: </pre>						
 				
-				
+						<p>
+							Enter the integer that matches your choice and hit enter. 
+						</p>
+						
+						
 						<p>
 							<strong>13. Choose a method to summarize the value of overlapping pixels in each annual composite.</strong> For overlapping pixels
 							in each annual composite you can summarize them by: mean, maximum, minimum, or median. There is some evidence that median produces
