@@ -53,6 +53,19 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+					<h3>Version 0.3.6 (beta) 8/4/16</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.6-beta/LandsatLinkr_0.3.6.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","ggplot2","MASS","gridExtra","zoo","segmented","plyr","ecp","gdalUtils","rgdal","igraph","hexbin"))</pre>
+					<p>
+						This version fixes a bug related to defining a day-of-year range to include in annual image compositing and how to deal with labeling the files 
+						if the date range crosses the year divide. A variable involved in these matters was not being defined by default, so in some cases an undefined 
+						parameter was passed to the mixel compositing function causing it to throw an error.
+					</p>
+					
+					
+					
 					<h3>Version 0.3.5 (beta) 7/26/16</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.5-beta/LandsatLinkr_0.3.5.zip", "LandsatLinkr")
