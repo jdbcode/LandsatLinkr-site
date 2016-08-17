@@ -53,6 +53,20 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+					<h3>Version 0.4.0 (beta) 8/17/16</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.0-beta/LandsatLinkr_0.4.0.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils","rgdal","igraph","MASS"))</pre>
+					<p>
+						This version is mostly housekeeping. It removes a bunch of loose-end functions and reduces the package dependency list. 
+						There are a couple of bug fixes too. The most notable is that previously, during OLI calibration to ETM+, if there 
+						was not a coincident instance of a year between OLI and ETM+, then for that year no OLI-to-ETM+ calibrated image would 
+						be created. This has been fixed. There is also now a <a href="https://github.com/jdbcode/LandsatLinkr/blob/master/LandsatLinkr_function_map.txt" target="_blank">function map</a> 
+						to make altering forks easier. Please let me know if you hit any bugs!
+					</p>
+					
+					
 					<h3>Version 0.3.6 (beta) 8/4/16</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.3.6-beta/LandsatLinkr_0.3.6.zip", "LandsatLinkr")
