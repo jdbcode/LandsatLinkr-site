@@ -53,6 +53,16 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+                    <h3>Version 0.4.1 (beta) 6/13/17</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.1-beta/LandsatLinkr_0.4.1.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils","rgdal","igraph","MASS"))</pre>
+					<p>
+                        This version makes LLR compatible with the new Landsat Collection 1 data. File name differences between Pre-Collection 1 and Collection 1 were causing the program to break. This version now distinguishes between the two data versions and handles them appropriately. It is recommended that you do not mix the data types for surface reflectance TM/ETM+ and OLI. MSS data still only exists as Pre-Collection 1, so continue to use it. As always, please let me know if you run into any bugs or outputs do not seem correct.
+					</p>
+                    
+                    
 					<h3>Version 0.4.0 (beta) 8/17/16</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.0-beta/LandsatLinkr_0.4.0.zip", "LandsatLinkr")

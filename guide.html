@@ -404,7 +404,7 @@
 							bug fixes and enhancements.  
 						</p>
 						<pre>
-download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.0-beta/LandsatLinkr_0.4.0.zip", "LandsatLinkr")
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.1-beta/LandsatLinkr_0.4.1.zip", "LandsatLinkr")
 install.packages("LandsatLinkr", repos=NULL, type="binary")
 install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils","rgdal","igraph","MASS"))</pre>
 						<p>
@@ -512,8 +512,8 @@ install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils"
 						</p>
 						<h3 class="guide_link" id="download_landsat_images">Download Landsat images</h3>
 						<p>
-							All images are downloaded from the USGS Earth Explorer website. MSS images should be of the LPGS product 
-							type and surface reflectance for TM/ETM+ (LEDAPS method) and OLI (L8SR method). For Landsat MSS 1-3 (WRS-1), MSS 4-5 (WRS-2), TM, ETM+,  
+							All images are downloaded from the USGS Earth Explorer website. MSS images should be of the Pre-Collection 1 LPGS product 
+							type and surface reflectance for TM/ETM+ and OLI of the Collection 1 Higher-Level product type. For Landsat MSS 1-3 (WRS-1), MSS 4-5 (WRS-2), TM, ETM+,  
 							and OLI you will select images to include in separate processing orders. You will need an Earth Explorer 
 							user account to download images. You can register for one on the home page, if you don't already have an account. 
 						</p>
@@ -523,11 +523,11 @@ install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils"
 							snow cover, and sun angle. We are working on ways to allow more flexibly in date range, but for now it 
 							is advisable to use only data from summer months. Use good judgement for high and low latitude scenes.
 						</p>
-						<p>
+						<!--<p>
 							Note that there are multiple ways to get the image data, the method above is just one example. As long as the MSS 
 							data are LPGS compressed .tar.gz files and the TM/ETM+ images are LEDAPS CDR .tar.gz compressed files then LLR should
 							ingest them just fine.
-						</p>
+						</p>-->
 						
 						<h4 class="guide_link" id="mss_images">MSS images</h4>
 						<ol>
@@ -539,7 +539,7 @@ install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils"
 								Under the <em>Results Options</em> tab increase the <em>Number of records to return</em> to 1,000 (ensures that 
 								the image list is not truncated) and then press the <em>Data Sets</em> button
 							</li>
-							<li>Expand the <em>Landsat Archive</em> menu and check the <em>L1-5 MSS</em> box and click the <em>Additional Criteria</em> tab.
+                            <li>Expand the <em>Landsat Archive</em> menu, then the <em>Pre-Collection Level-1</em> menu and check the <em>L1-5 MSS</em> box and click the <em>Additional Criteria</em> tab.
 							<li>
 								Scroll down to the <em>WRS Type</em> menu and select the WRS type that corresponds to the scene you intend to
 								download. <em>WRS for Landsat 1, 2, & 3</em> (WRS-1) or <em>WRS for Landsat 4 & 5</em> (WRS-2).
@@ -583,7 +583,7 @@ install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils"
 								truncated) and then press the <em>Data Sets</em> button
 							</li>
 							<li>
-								Expand the <em>Landsat Archive</em> menu and check the <em>Land Surface Reflectance</em> box for <em>L4-5 TM</em> and click the <em>Additional 
+                                Expand the <em>Landsat Archive</em> menu, then the <em>Collection 1 Higher-Level</em> menu and check the <em>L4-5 TM C1 Highler-Level</em> box and click the <em>Additional 
 								Criteria</em> tab.
 							</li>
 							<li>Under the <em>WRS Path</em> and <em>WRS Row</em> fields enter the associated path and row number for the scene of interest.</li>
@@ -622,7 +622,7 @@ install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils"
 						<p>							
 							Exceptions to the TM/ETM+ download instructions are needed for steps 3 and 5 where you will select the OLI 
 							sensor options instead of TM or ETM+. When choosing options under the <em>Additional Criteria</em> tab, make sure that you only select
-							<em>OLI</em> under the <em>Sensor ID</em> list. Always make sure to select L1T as the data type (it has been terrain corrected - LLR will
+							<em>OLI</em> under the <em>Sensor Identifier</em> list. Always make sure to select L1T as the data type (it has been terrain corrected - LLR will
 							not process L1G).
 						</p>
 
