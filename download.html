@@ -53,6 +53,16 @@
 					<h4>Beta testing is ongoing - please <a href="contact.html" target="_blank">email</a> me with any errors or questions.</h4>
 					<hr>
 
+                    <h3>Version 0.4.2 (beta) 6/26/17</h3>
+					<pre>
+download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.2-beta/LandsatLinkr_0.4.2.zip", "LandsatLinkr")
+install.packages("LandsatLinkr", repos=NULL, type="binary")
+install.packages(c("raster","SDMTools","doParallel","foreach","plyr","gdalUtils","rgdal","igraph","MASS"))</pre>
+					<p>
+                        Previously you needed to have at least two years of intersection between OLI and ETM+ for OLI to be harmonized to ETM+, now you only need one year. However, it is recommended that you included as many years of overlap between ETM+ and OLI as possible for better harmonization.
+					</p>
+                    
+                    
                     <h3>Version 0.4.1 (beta) 6/13/17</h3>
 					<pre>
 download.file("https://github.com/jdbcode/LandsatLinkr/releases/download/0.4.1-beta/LandsatLinkr_0.4.1.zip", "LandsatLinkr")
